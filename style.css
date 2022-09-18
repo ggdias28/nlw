@@ -1,0 +1,175 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul{
+    list-style:none;
+}
+
+body{
+    background-image: url(./fotos/Fundo.jpg);
+    background-position: top center;
+    background-size: 100% auto;
+    background-repeat:no-repeat;
+    background-color: #121214;
+}
+
+header{
+    margin-top: 32px;
+    text-align: center;
+    height: calc(120px + 32px);
+    
+}
+
+header div {   /* divs nao possuem propriedades de texto, logo text-align center nao funciona*/
+    width: 120px;
+    margin: auto; /* alinhando para o centro*/
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50%, #E2D45C 100%); /*utilizado para fazer um gradiente de cor*/
+    border-radius: 50%;
+    display: flex; /* alinha os itens*/
+    padding: 4px; /*preenchimento de 4px - aumetando a borda*/
+    transition: transform .3s;
+}
+
+header div:hover {
+    transform: scale(1.1);
+}
+
+header img{
+    width: 100%;
+    border-radius: 50%;
+
+}
+
+
+body *{
+    font-family: 'Inter', sans-serif;
+    line-height: 160%;
+}
+
+main *{
+}
+
+
+main{
+    max-width: 580px;
+    width: 90%;
+    margin: 32px auto; /*primeiro valor considerado como cima e emabixo e nas laterais continua automatico*/
+    display: flex;
+    gap:24px;
+    flex-direction: column; /* Faz com que os itens dentro do main tornam-se organizados por coluna*/
+    /* display: grid; essa forma também deixa os itens um abaixo do outro */
+    /*margin-top: 32px; Distancia da foto para os cartões*/
+}
+
+section{
+    color:white;
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50%, #E2D45C 100%); /*utilizado para fazer um gradiente de cor*/
+    padding-top: 4px; /* Preenchimento interno de 4px*/
+    border-radius: 10px;
+}
+
+section div{
+    background-color: #2A2734;
+    padding: 32px;
+    padding-top: 24px;
+    border-radius: 8px;
+    
+}
+
+section h2{
+    letter-spacing: -0.47px;
+
+}
+
+section p{
+    letter-spacing: -0.18px;
+    color: #A1A1AA;
+}
+
+ul {
+    display: flex;
+    gap: 16px; /*so funciona pois o flex esta ativado*/
+    margin-top: 24px; /* cria uma margin relacionada ao topo*/
+    flex-wrap: wrap ; /*quando chegar no limite da caixa, irá jogar os proximos itens para baixo*/
+
+}
+
+section ul li{
+transition: transform .3s;
+}
+
+section ul li:hover{
+    transform: scale(1.1);
+}
+
+.games-list img {
+    width: 90px; /*largura*/
+    border-radius: 8px;
+
+}
+
+.channel-list img{
+    border-radius: 50%;
+    width: 70px;
+    border: 1px solid #443E54;
+}
+
+/* animação*/
+
+header div{
+
+    animation: fromTop .7s .2s backwards; /*backwards puxa as propriedades para a div e quando finalizar apaga tudo*/  
+    
+}
+
+
+main section{
+    animation: fromBottom .7s backwards;
+}
+
+
+main section:nth-child(1){
+    animation-delay: 0;
+}
+
+
+
+main section:nth-child(2){
+    animation-delay: .4s;
+}
+
+
+main section:nth-child(3){
+    animation-delay: .7s;
+}
+
+@keyframes fromTop{
+    
+    from{
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transfomr: translateY(0)
+
+    }
+}
+
+@keyframes fromBottom {
+    from{
+        opacity: 0;
+        transform: translateY(30px); /* pega o eixo Y e joga 30px para baixo*/
+    }
+
+    to {
+        opacity: 1;
+        transfomr: translateY(0)
+
+    }
+    
+}
